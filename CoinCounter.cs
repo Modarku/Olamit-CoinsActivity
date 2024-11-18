@@ -13,7 +13,7 @@ namespace CoinsActivity
 {
     public class CoinCounter
     {
-        //Returns a sequence of processes (Resize to 500 -> Grayscale -> Smooth -> Binary) to make the image
+        //Returns a sequence of processes (Grayscale -> Smooth -> Resize to 500 -> Binary) to make the image
         //simpler to count the coins
         public static Bitmap ProcessCoin(Bitmap b, int threshold)
         {
