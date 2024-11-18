@@ -82,17 +82,14 @@ namespace CoinsActivity
             {
                 for (int x = 0; x < processed.Width; x++)
                 {
-                    if (!visited[x, y] && IsBlackPixel(processed, x, y))  // If the pixel is black and not visited
+                    if (!visited[x, y] && IsBlackPixel(processed, x, y))
                     {
-                        // Start a flood fill or DFS to find the entire circle
                         List<Point> circlePixels = new List<Point>();
                         FloodFill(processed, x, y, visited, circlePixels);
 
-                        // Get bounding box for the circle
                         Rectangle boundingBox = GetBoundingBox(circlePixels);
                         int area = boundingBox.Width * boundingBox.Height;
 
-                        // Draw a red rectangle around the detected circle
                         DrawRectangle(processed, boundingBox, area);
 
                         if (area <= 2000) // none
